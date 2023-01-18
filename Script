@@ -1,0 +1,27 @@
+!b::
+Send,^a
+sleep,50
+Send,^c
+sleep,50
+InputBox, OutputVar, Question 1, What is the contest id?
+InputBox, OutputVar2, Question 2, What is the problem id?(such as '1', '2')
+InputBox, OutputVar3, Question 3, What is the x value of submit bottom
+InputBox, OutputVar4, Question 4, What is the x value of submit bottom
+
+Run, https://codeforces.com/contest/ %OutputVar% /submit
+sleep,2000
+Loop, %OutputVar2%
+{
+    Send,{Down}
+}    
+sleep,200
+Send,{Tab}
+sleep,200
+Send,{Tab}
+sleep,200
+Send,^v
+Click,700,450
+sleep,200
+Send,{Down}
+sleep,500
+Click, %OutputVar3%,%OutputVar4%
